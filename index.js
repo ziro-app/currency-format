@@ -2,7 +2,7 @@
 // this function receives a value in cents and returns it in R$1.000,00 format
 // does not format values above R$999.999,99
 const currencyFormat = receivedValue => {
-	const value = receivedValue === 0 ? '00' : receivedValue
+	const value = receivedValue === 0 ? '00' : receivedValue === '0.0' ? '00' : receivedValue === '0.00' ? '00' : receivedValue
 	if (value) {
 		const valueString = `${value}`
 		// checks if string is in integer format and if it only has 2 digits if starts with leading 0
